@@ -48,6 +48,25 @@ IF NOT DEFINED KUDU_SYNC_CMD (
   SET KUDU_SYNC_CMD=%appdata%\npm\kuduSync.cmd
 )
 
+:: Install JRuby
+set JRUBY_VERSION=9.0.5.0
+set JRUBY_HOME=%DEPLOYMENT_TARGET%\runtime_bin\jruby-%JRUBY_VERSION%
+set JRUBY_EXE=%JRUBY_HOME%\bin\jruby.exe
+set JRUBY_GEM_CMD=%JRUBY_HOME%\bin\gem
+set JRUBY_BUNDLER_CMD=%JRUBY_HOME%\bin\bundle
+
+set JAVA_OPTS=-Djava.net.preferIPv4Stack=true
+
+IF NOT EXIST %JRUBY_HOME% (
+  echo Installing JRuby %JRUBY_VERSION%
+  PUSHD "%DEPLOYMENT_TARGET%"
+  mkdir runtime_bin % cd runtime_bin
+
+  curl -LOs https://s3.amazonaws.com/jruby.org/downloads/%JRUBY_VERSION%/jruby-bin-%JRUBY_VERSION%.zip
+  unzip -q jruby-bin-%JRUBY_VERSION%.zip & rm -f jruby-bin-%JRUBY_VERSION%.zip
+  POPD
+)
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Deployment
 :: ----------
