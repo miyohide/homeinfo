@@ -60,7 +60,7 @@ set JAVA_OPTS=-Djava.net.preferIPv4Stack=true
 IF NOT EXIST %JRUBY_HOME% (
   echo Installing JRuby %JRUBY_VERSION%
   PUSHD "%DEPLOYMENT_TARGET%"
-  mkdir runtime_bin % cd runtime_bin
+  mkdir runtime_bin & cd runtime_bin
 
   curl -LOs https://s3.amazonaws.com/jruby.org/downloads/%JRUBY_VERSION%/jruby-bin-%JRUBY_VERSION%.zip
   unzip -q jruby-bin-%JRUBY_VERSION%.zip & rm -f jruby-bin-%JRUBY_VERSION%.zip
