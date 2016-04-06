@@ -74,7 +74,7 @@ JRUBY_BUNDLER_CMD=$JRUBY_HOME/bin/bundle
 
 JAVA_OPTS=-Djava.net.preferIPv4Stack=true
 
-if [[ ! -n "$JRUBY_HOME" ]]; then
+if [[ ! -d "$JRUBY_HOME" ]]; then
   echo Installing JRuby $JRUBY_VERSION
   pushd $DEPLOYMENT_TARGET
 
