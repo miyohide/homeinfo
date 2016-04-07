@@ -86,6 +86,13 @@ if [[ ! -d "$JRUBY_HOME" ]]; then
   popd
 fi
 
+if [[ ! -f "$JRUBY_BUNDLER_CMD" ]]; then
+  echo Installing bundler
+
+  $JRUBY_EXE -S $JRUBY_GEM_CMD install bundler --no-ri --no-rdoc --quiet > /dev/null
+  exitWithMessageOnError "fail to install bundler"
+fi
+
 ##################################################################################################################################
 # Deployment
 # ----------
