@@ -89,7 +89,7 @@ fi
 if [[ ! -f "$JRUBY_BUNDLER_CMD" ]]; then
   echo Installing bundler
 
-  $JRUBY_EXE -S $JRUBY_GEM_CMD install bundler --no-ri --no-rdoc --quiet > /dev/null
+  $JRUBY_EXE -S $JRUBY_GEM_CMD install bundler --no-ri --no-rdoc
   exitWithMessageOnError "fail to install bundler"
 fi
 
