@@ -72,7 +72,7 @@ JRUBY_EXE=$JRUBY_HOME/bin/jruby.exe
 JRUBY_GEM_CMD=$JRUBY_HOME/bin/gem
 JRUBY_BUNDLER_CMD=$JRUBY_HOME/bin/bundle
 
-JAVA_OPTS=-Djava.net.preferIPv4Stack=true
+export JAVA_OPTS=-Djava.net.preferIPv4Stack=true
 
 if [[ ! -d "$JRUBY_HOME" ]]; then
   echo Installing JRuby $JRUBY_VERSION
