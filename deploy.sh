@@ -115,7 +115,7 @@ if [[ -f "$DEPLOYMENT_TARGET\Gemfile.lock" ]]; then
   exitWithMessageOnError "Bundle install failed"
 
   popd
-)
+fi
 
 ##################################################################################################################################
 
