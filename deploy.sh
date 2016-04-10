@@ -105,6 +105,18 @@ if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
   exitWithMessageOnError "Kudu Sync failed"
 fi
 
+# 2. Exec Bundler
+if [[ -f "$DEPLOYMENT_TARGET\Gemfile.lock" ]]; then
+  echo Executing bundle install
+
+  pushd "$DEPLOYMENT_TARGET"
+
+  $JRUBY_EXE -S "$JRUBY_BUNDLER_CMD" install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4
+  exitWithMessageOnError "Bundle install failed"
+
+  popd
+)
+
 ##################################################################################################################################
 
 # Post deployment stub
