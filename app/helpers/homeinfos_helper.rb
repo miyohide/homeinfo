@@ -1,0 +1,2 @@
+module HomeinfosHelper
+end
