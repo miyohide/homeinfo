@@ -16,4 +16,5 @@ gem 'chartkick'
 
 group :development do
   gem 'spring'
+  gem 'quiet_assets'
 end
