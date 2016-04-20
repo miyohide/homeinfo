@@ -117,6 +117,14 @@ if [[ -f "$DEPLOYMENT_TARGET\Gemfile.lock" ]]; then
   popd
 fi
 
+# 3. rake db:migrate
+echo DB migration
+
+pushd "$DEPLOYMENT_TARGET"
+
+$JRUBY_EXE -S vendor/bundle/bin/rake db:migrate RAILS_ENV=production
+
+popd
 ##################################################################################################################################
 
 # Post deployment stub
