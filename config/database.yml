@@ -21,5 +21,8 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: jdbcmssql
+  driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  url: 'jdbc:sqlserver://homeinfo.database.windows.net:1433;database=homeinfo'
+  username: homeinfo_kanri@homeinfo
+  password: <%= SQL_SERVER_PASSWORD %>
