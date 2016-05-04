@@ -25,4 +25,4 @@ production:
   driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
   url: 'jdbc:sqlserver://homeinfo.database.windows.net:1433;database=homeinfo'
   username: homeinfo_kanri@homeinfo
-  password: <%= SQL_SERVER_PASSWORD %>
+  password: <%= ENV['SQL_SERVER_PASSWORD'] %>
