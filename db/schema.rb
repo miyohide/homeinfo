@@ -11,26 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411135545) do
+ActiveRecord::Schema.define(version: 20160518113110) do
 
   create_table "homeinfo_data", force: :cascade do |t|
     t.string   "dateandtime"
-    t.integer  "temperature_id"
-    t.integer  "humidity_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "humidities", force: :cascade do |t|
-    t.string   "humidity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "temperatures", force: :cascade do |t|
-    t.string   "temperature"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "temperature"
+    t.string   "humidity"
   end
 
 end
