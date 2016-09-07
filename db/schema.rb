@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518113110) do
+ActiveRecord::Schema.define(version: 20160907135947) do
 
   create_table "homeinfo_data", force: :cascade do |t|
     t.string   "dateandtime"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20160518113110) do
     t.datetime "updated_at",  null: false
     t.string   "temperature"
     t.string   "humidity"
+    t.float    "ido"
+    t.float    "keido"
   end
 
 end
