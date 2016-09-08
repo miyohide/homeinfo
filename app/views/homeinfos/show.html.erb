@@ -1,8 +1,11 @@
-<h1>Homeinfos#show</h1>
-<p>Find me in app/views/homeinfos/show.html.erb</p>
-
 <h1>湿度</h1>
-<%= line_chart @humidity, library: { hAixs: { format: "yyyy/MM/dd HH:mm:ss.SSS"}} %>
+<%= line_chart @humidity, library: { hAixs: { format: "yyyy/MM/dd HH:mm:ss"}} %>
 
 <h1>温度</h1>
 <%= line_chart @temperature %>
+
+<h1>緯度</h1>
+<%= line_chart @ido_data %>
+
+<h1>経度</h1>
+<%= line_chart @keido_data %>
